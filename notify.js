@@ -65,12 +65,12 @@ export async function notifyAvailability(data) {
     let content;
 
     if (available.length === 0) {
-        content = "Žádná nová místa se neuvolnila.";
+        content = "**Žádná nová místa se neuvolnila.** \n Detailní přehled: https://vojtech-kult.github.io/dorm-monitor-website/";
     } else {
         content = available
             .map(
                 (c) =>
-                    `@everyone Nová místa (${c.total}) na koleji ${c.collegeName}!`
+                    `@everyone **Nová místa (${c.total}) na koleji ${c.collegeName}!** \n Detailní přehled: https://vojtech-kult.github.io/dorm-monitor-website/`
             )
             .join("\n");
     }
