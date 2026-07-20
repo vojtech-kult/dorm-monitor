@@ -1,6 +1,10 @@
 name: Update dorm capacities
 
-
+on:
+  schedule:
+    - cron: "25 * * * *"
+  workflow_dispatch:
+  
 permissions:
   contents: write
 
