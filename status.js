@@ -49,7 +49,7 @@ function buildComponents() {
                 {
                     type: 2, // button
                     style: 1, // primary
-                    label: "🔄 Spustit scan",
+                    label: "Spustit scan ručně",
                     custom_id: "trigger_scan"
                 }
             ]
