@@ -58,7 +58,7 @@ function saveMessageId(messageId) {
     );
 }
 
-async function createMessage(channelId, embed, components, botToken) {
+async function createMessage(channelId, embed, botToken) {
     const response = await fetch(
         `${API_BASE}/channels/${channelId}/messages`,
         {
@@ -67,7 +67,7 @@ async function createMessage(channelId, embed, components, botToken) {
                 Authorization: `Bot ${botToken}`,
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ embeds: [embed], components })
+            body: JSON.stringify({ embeds: [embed] })
         }
     );
 
@@ -80,7 +80,7 @@ async function createMessage(channelId, embed, components, botToken) {
     return response.json();
 }
 
-async function editMessage(channelId, messageId, embed, components, botToken) {
+async function editMessage(channelId, messageId, embed, botToken) {
     return fetch(
         `${API_BASE}/channels/${channelId}/messages/${messageId}`,
         {
@@ -89,7 +89,7 @@ async function editMessage(channelId, messageId, embed, components, botToken) {
                 Authorization: `Bot ${botToken}`,
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ embeds: [embed], components })
+            body: JSON.stringify({ embeds: [embed] })
         }
     );
 }
@@ -111,7 +111,6 @@ export async function upsertStatusMessage(data, updatedAt) {
     }
 
     const embed = buildEmbed(data, updatedAt);
-    const components = buildComponents();
 
     const existingId = loadMessageId();
 
@@ -120,7 +119,6 @@ export async function upsertStatusMessage(data, updatedAt) {
             channelId,
             existingId,
             embed,
-            components,
             botToken
         );
 
@@ -135,7 +133,7 @@ export async function upsertStatusMessage(data, updatedAt) {
         );
     }
 
-    const created = await createMessage(channelId, embed, components, botToken);
+    const created = await createMessage(channelId, embed, botToken);
     saveMessageId(created.id);
     console.log("Status message created:", created.id);
 }
