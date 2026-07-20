@@ -41,22 +41,6 @@ function buildEmbed(data, updatedAt) {
     };
 }
 
-function buildComponents() {
-    return [
-        {
-            type: 1, // action row
-            components: [
-                {
-                    type: 2, // button
-                    style: 1, // primary
-                    label: "Spustit scan ručně",
-                    custom_id: "trigger_scan"
-                }
-            ]
-        }
-    ];
-}
-
 function loadMessageId() {
     try {
         const raw = fs.readFileSync(STATE_FILE, "utf8");
