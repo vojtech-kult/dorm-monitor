@@ -1,9 +1,12 @@
 import fs from "fs";
 import { getAllDorms } from "./parser.js";
 import { notifyAvailability } from "./notify.js";
+import { upsertStatusMessage } from "./status.js";
 
 
 const data = await getAllDorms();
+
+const updatedAt = new Date().toISOString();
 
 
 try {
@@ -13,8 +16,15 @@ try {
 }
 
 
+try {
+    await upsertStatusMessage(data, updatedAt);
+} catch (err) {
+    console.error("Status message error:", err.message);
+}
+
+
 const output = {
-    updatedAt: new Date().toISOString(),
+    updatedAt,
     data
 };
 
