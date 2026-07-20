@@ -1,6 +1,8 @@
 name: Update dorm capacities
 
 on:
+  schedule:
+    - cron: "15 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -26,6 +28,10 @@ jobs:
         run: node check.js
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_GUILD_ID: ${{ secrets.DISCORD_GUILD_ID }}
+          DISCORD_ROLE_ALL_ID: ${{ secrets.DISCORD_ROLE_ALL_ID }}
+          DISCORD_ROLE_AVAILABLE_ID: ${{ secrets.DISCORD_ROLE_AVAILABLE_ID }}
 
       - name: Commit changes
         run: |
