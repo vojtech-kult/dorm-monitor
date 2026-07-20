@@ -2,7 +2,7 @@ name: Update dorm capacities
 
 on:
   schedule:
-    - cron: "15 * * * *"
+    - cron: "25 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -32,13 +32,14 @@ jobs:
           DISCORD_GUILD_ID: ${{ secrets.DISCORD_GUILD_ID }}
           DISCORD_ROLE_ALL_ID: ${{ secrets.DISCORD_ROLE_ALL_ID }}
           DISCORD_ROLE_AVAILABLE_ID: ${{ secrets.DISCORD_ROLE_AVAILABLE_ID }}
+          DISCORD_STATUS_CHANNEL_ID: ${{ secrets.DISCORD_STATUS_CHANNEL_ID }}
 
       - name: Commit changes
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
 
-          git add dorms.json
+          git add dorms.json status-message-id.json
 
           git commit -m "Update dorm capacities" || exit 0
 
