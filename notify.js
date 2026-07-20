@@ -9,6 +9,8 @@
  * on the previous run.
  */
 
+import { getGuildMembers, sendDmsToRole } from "./dm.js";
+
 function roomTotal(room) {
     return (
         (parseInt(room.men, 10) || 0) +
@@ -54,28 +56,58 @@ async function postToDiscord(webhookUrl, content) {
 
 export async function notifyAvailability(data) {
     const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
-
-    if (!webhookUrl) {
-        console.log("DISCORD_WEBHOOK_URL not set, skipping notification.");
-        return;
-    }
+    const botToken = process.env.DISCORD_BOT_TOKEN;
+    const guildId = process.env.DISCORD_GUILD_ID;
+    const roleAllId = process.env.DISCORD_ROLE_ALL_ID;
+    const roleAvailableId = process.env.DISCORD_ROLE_AVAILABLE_ID;
 
     const available = getAvailableColleges(data);
 
     let content;
 
     if (available.length === 0) {
-        content = "**Žádná nová místa se neuvolnila.** \n Detailní přehled: https://vojtech-kult.github.io/dorm-monitor-website/";
+        content = "Žádná nová místa se neuvolnila.";
     } else {
         content = available
             .map(
                 (c) =>
-                    `@everyone **Nová místa (${c.total}) na koleji ${c.collegeName}!** \n Detailní přehled: https://vojtech-kult.github.io/dorm-monitor-website/`
+                    `@everyone Nová místa (${c.total}) na koleji ${c.collegeName}!`
             )
             .join("\n");
     }
 
-    console.log("Sending Discord notification:", content);
+    console.log("Notification content:", content);
 
-    await postToDiscord(webhookUrl, content);
+    // Channel webhook — same behavior as before.
+    if (webhookUrl) {
+        await postToDiscord(webhookUrl, content);
+    } else {
+        console.log("DISCORD_WEBHOOK_URL not set, skipping channel message.");
+    }
+
+    // Role-based DMs.
+    if (!botToken || !guildId) {
+        console.log(
+            "DISCORD_BOT_TOKEN or DISCORD_GUILD_ID not set, skipping DMs."
+        );
+        return;
+    }
+
+    const members = await getGuildMembers(guildId, botToken);
+
+    // "All notifications" role: gets every message, same as the webhook.
+    if (roleAllId) {
+        await sendDmsToRole(members, roleAllId, content, botToken, "All notifications");
+    }
+
+    // "Available notifications only" role: only DM'd when spots were found.
+    if (roleAvailableId && available.length > 0) {
+        await sendDmsToRole(
+            members,
+            roleAvailableId,
+            content,
+            botToken,
+            "Available notifications only"
+        );
+    }
 }
