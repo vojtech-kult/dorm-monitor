@@ -47,14 +47,14 @@ function buildChannelContent(collegeStatus, dormRoles) {
     const available = collegeStatus.filter((c) => c.total > 0);
 
     if (available.length === 0) {
-        return "Žádná nová místa se neuvolnila.";
+        return "**Koleje UK:** Žádná nová místa se neuvolnila.\nDetailní přehled: https://vojtech-kult.github.io/dorm-monitor-website/";
     }
 
     return available
         .map((c) => {
             const roleId = dormRoles[c.id];
             const mention = roleId ? `<@&${roleId}> ` : "";
-            return `${mention}Nová místa (${c.total}) na koleji ${c.collegeName}!`;
+            return `${mention}Nová místa (${c.total}) na koleji ${c.collegeName}!\nDetailní přehled: https://vojtech-kult.github.io/dorm-monitor-website/`;
         })
         .join("\n");
 }
@@ -85,8 +85,8 @@ function buildPersonalMessage(subscribedIds, collegeStatus, mode) {
     if (mode === "all") {
         const lines = relevant.map((c) =>
             c.total > 0
-                ? `Nová místa (${c.total}) na koleji ${c.collegeName}!`
-                : `Žádná volná místa na koleji ${c.collegeName}.`
+                ? `**Koleje UK:** Nová místa (${c.total}) na koleji ${c.collegeName}!\nDetailní přehled: https://vojtech-kult.github.io/dorm-monitor-website/`
+                : `**Koleje UK:** Žádná volná místa na koleji ${c.collegeName}.\nDetailní přehled: https://vojtech-kult.github.io/dorm-monitor-website/`
         );
         return lines.join("\n");
     }
