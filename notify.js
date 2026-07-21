@@ -1,6 +1,8 @@
 import fs from "fs";
 import { getGuildMembers, sendDmToUser } from "./dm.js";
 
+const WEBSITE_LINK = "https://vojtech-kult.github.io/dorm-monitor-website/";
+
 function roomTotal(room) {
     return (
         (parseInt(room.men, 10) || 0) +
@@ -43,20 +45,49 @@ async function postToDiscord(webhookUrl, content) {
     }
 }
 
+/**
+ * Builds a single combined sentence out of a list of colleges, e.g.:
+ * "<@&123> Nová místa (3) na koleji Budeč, Nová místa (5) na koleji Otava.
+ *  Žádná volná místa na koleji Hostivař, Kajetánka."
+ *
+ * - `available`: colleges with free spots (each gets its own count, and a
+ *   role mention if `mentions` is true and a role is mapped for it).
+ * - `unavailable`: colleges with none, grouped into one comma-joined clause.
+ */
+function buildSummarySentence(colleges, { mentions = false, dormRoles = {} } = {}) {
+    const available = colleges.filter((c) => c.total > 0);
+    const unavailable = colleges.filter((c) => c.total === 0);
+
+    const parts = [];
+
+    if (available.length > 0) {
+        const availableText = available
+            .map((c) => {
+                const roleId = dormRoles[c.id];
+                const mention = mentions && roleId ? `<@&${roleId}> ` : "";
+                return `${mention}Nová místa (${c.total}) na koleji ${c.collegeName}`;
+            })
+            .join(", ");
+        parts.push(`${availableText}.`);
+    }
+
+    if (unavailable.length > 0) {
+        const names = unavailable.map((c) => c.collegeName).join(", ");
+        parts.push(`Žádná volná místa na koleji ${names}.`);
+    }
+
+    return parts.join(" ");
+}
+
 function buildChannelContent(collegeStatus, dormRoles) {
     const available = collegeStatus.filter((c) => c.total > 0);
 
     if (available.length === 0) {
-        return "**Koleje UK:** Žádná nová místa se neuvolnila.\nDetailní přehled: https://vojtech-kult.github.io/dorm-monitor-website/";
+        return `**Koleje UK:** Žádná nová místa se neuvolnila.\nDetailní přehled: ${WEBSITE_LINK}`;
     }
 
-    return available
-        .map((c) => {
-            const roleId = dormRoles[c.id];
-            const mention = roleId ? `<@&${roleId}> ` : "";
-            return `${mention}Nová místa (${c.total}) na koleji ${c.collegeName}!\nDetailní přehled: https://vojtech-kult.github.io/dorm-monitor-website/`;
-        })
-        .join("\n");
+    const sentence = buildSummarySentence(available, { mentions: true, dormRoles });
+    return `**Koleje UK:** ${sentence}\nDetailní přehled: ${WEBSITE_LINK}`;
 }
 
 function getSubscribedCollegeIds(member, dormRoles, allDormsRoleId, allCollegeIds) {
@@ -73,7 +104,7 @@ function getSubscribedCollegeIds(member, dormRoles, allDormsRoleId, allCollegeId
 }
 
 /**
- * Builds one combined message for a member, based on their subscribed
+ * Builds one combined DM message for a member, based on their subscribed
  * college IDs and whether they're an "all updates" or "available only" user.
  * Returns null if there's nothing worth sending this run.
  */
@@ -83,21 +114,16 @@ function buildPersonalMessage(subscribedIds, collegeStatus, mode) {
     if (relevant.length === 0) return null;
 
     if (mode === "all") {
-        const lines = relevant.map((c) =>
-            c.total > 0
-                ? `**Koleje UK:** Nová místa (${c.total}) na koleji ${c.collegeName}!\nDetailní přehled: https://vojtech-kult.github.io/dorm-monitor-website/`
-                : `**Koleje UK:** Žádná volná místa na koleji ${c.collegeName}.\nDetailní přehled: https://vojtech-kult.github.io/dorm-monitor-website/`
-        );
-        return lines.join("\n");
+        const sentence = buildSummarySentence(relevant);
+        return `**Koleje UK:** ${sentence}\nDetailní přehled: ${WEBSITE_LINK}`;
     }
 
     // mode === "available"
     const withSpots = relevant.filter((c) => c.total > 0);
     if (withSpots.length === 0) return null;
 
-    return withSpots
-        .map((c) => `Nová místa (${c.total}) na koleji ${c.collegeName}!`)
-        .join("\n");
+    const sentence = buildSummarySentence(withSpots);
+    return `**Koleje UK:** ${sentence}\nDetailní přehled: ${WEBSITE_LINK}`;
 }
 
 export async function notifyAvailability(data) {
