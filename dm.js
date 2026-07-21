@@ -89,7 +89,7 @@ function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function sendDmToUser(userId, content, botToken) {
+export async function sendDmToUser(userId, content, botToken) {
     const channelId = await openDmChannel(userId, botToken);
     await sendChannelMessage(channelId, content, botToken);
 }
