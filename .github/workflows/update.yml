@@ -30,6 +30,7 @@ jobs:
           DISCORD_GUILD_ID: ${{ secrets.DISCORD_GUILD_ID }}
           DISCORD_ROLE_ALL_ID: ${{ secrets.DISCORD_ROLE_ALL_ID }}
           DISCORD_ROLE_AVAILABLE_ID: ${{ secrets.DISCORD_ROLE_AVAILABLE_ID }}
+          DISCORD_ROLE_ALL_DORMS_ID: ${{ secrets.DISCORD_ROLE_ALL_DORMS_ID }}
           DISCORD_STATUS_CHANNEL_ID: ${{ secrets.DISCORD_STATUS_CHANNEL_ID }}
 
       - name: Commit changes
