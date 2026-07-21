@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T22:01:09.817Z",
+  "updatedAt": "2026-07-21T22:30:55.418Z",
   "data": [
     {
       "id": "380942",
@@ -30,30 +30,8 @@
     },
     {
       "id": "380952",
-      "collegeName": "Kolej Hostivař",
-      "rooms": [
-        {
-          "name": "1-lůžkový pokoj se soc. zař.",
-          "price": "196",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        },
-        {
-          "name": "2-lůžkový pokoj bez soc. zař.",
-          "price": "151",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        },
-        {
-          "name": "2-lůžkový pokoj se soc. zař.",
-          "price": "164",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        }
-      ]
+      "collegeName": "Service Unavailable",
+      "rooms": []
     },
     {
       "id": "380944",
@@ -105,44 +83,8 @@
     },
     {
       "id": "380939",
-      "collegeName": "Kolej Jednota",
-      "rooms": [
-        {
-          "name": "1-lůžkový pokoj bez soc. zař.",
-          "price": "232",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        },
-        {
-          "name": "2-lůžkový pokoj bez soc. zař.",
-          "price": "193",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        },
-        {
-          "name": "3-lůžkový pokoj bez soc. zař.",
-          "price": "154",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        },
-        {
-          "name": "4-lůžkový pokoj bez soc. zař.",
-          "price": "144",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        },
-        {
-          "name": "5-lůžkový pokoj bez soc. zař.",
-          "price": "0",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        }
-      ]
+      "collegeName": "Service Unavailable",
+      "rooms": []
     },
     {
       "id": "380946",
@@ -187,37 +129,8 @@
     },
     {
       "id": "380958",
-      "collegeName": "Kolej Komenského",
-      "rooms": [
-        {
-          "name": "1-lůžkový pokoj se soc. zař.",
-          "price": "267",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        },
-        {
-          "name": "2-lůžkový pokoj se soc. zař.",
-          "price": "214",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        },
-        {
-          "name": "1-lůžkový pokoj se soc. Zař. NW",
-          "price": "272",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        },
-        {
-          "name": "2-lůžkový pokoj se soc. Zař. NW",
-          "price": "226",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        }
-      ]
+      "collegeName": "Service Unavailable",
+      "rooms": []
     },
     {
       "id": "380961",
