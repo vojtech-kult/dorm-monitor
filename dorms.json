@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-22T09:16:01.610Z",
+  "updatedAt": "2026-07-22T09:18:41.635Z",
   "data": [
     {
       "id": "380942",
@@ -8,7 +8,7 @@
         {
           "name": "1-lůžkový pokoj bez soc. zař.",
           "price": "230",
-          "men": "3",
+          "men": "0",
           "women": "0",
           "unknown": "0"
         },
@@ -152,7 +152,7 @@
           "name": "1-lůžkový pokoj se soc. zař.",
           "price": "233",
           "men": "0",
-          "women": "2",
+          "women": "0",
           "unknown": "0"
         },
         {
