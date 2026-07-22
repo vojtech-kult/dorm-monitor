@@ -6,6 +6,23 @@ import { upsertStatusMessage } from "./status.js";
 
 const data = await getAllDorms();
 
+// ============================================================
+// 🧪 TEST OVERRIDE — REMOVE THIS BLOCK BEFORE REAL USE 🧪
+// Simulates free spots on Budeč (3) and Kajetánka (2) so the
+// notification/DM/status-message flow can be tested end-to-end.
+// ============================================================
+for (const college of data) {
+    if (college.id === "380942") { // Kolej Budeč
+        if (college.rooms[0]) college.rooms[0].men = "3";
+    }
+    if (college.id === "380946") { // Kolej Kajetánka
+        if (college.rooms[0]) college.rooms[0].women = "2";
+    }
+}
+// ============================================================
+// 🧪 END TEST OVERRIDE 🧪
+// ============================================================
+
 const updatedAt = new Date().toISOString();
 
 
