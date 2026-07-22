@@ -70,7 +70,7 @@ const dormSelect = {
         {
             type: 3,
             custom_id: "select_dorm_roles",
-            placeholder: "Vyber koleje (lze více najednou)",
+            placeholder: "Vyberte koleje, které vás zajímají",
             min_values: 0,
             max_values: dormOptions.length,
             options: dormOptions
@@ -80,9 +80,9 @@ const dormSelect = {
 
 const body = {
     content:
-        "**Nastavení oznámení o kolejích**\n\n" +
-        "Vyber, jak často chceš dostávat zprávy, a které koleje tě zajímají. " +
-        "Výběr můžeš kdykoliv změnit — stačí vybrat znovu.",
+        "**Nastavení oznámení o dostupnosti kolejí**\n\n" +
+        "Vyberte, jaké koleje vás zajímají a jaké výsledky chcete obdržet do soukromé zprávy. " +
+        "Výběr můžete kdykoliv změnit - stačí vybrat znovu.",
     components: [frequencySelect, dormSelect]
 };
 
