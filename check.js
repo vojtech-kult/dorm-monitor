@@ -11,14 +11,16 @@ const data = await getAllDorms();
 // Simulates free spots on Budeč (3) and Kajetánka (2) so the
 // notification/DM/status-message flow can be tested end-to-end.
 // ============================================================
-for (const college of data) {
-    if (college.id === "380942") { // Kolej Budeč
-        if (college.rooms[0]) college.rooms[0].men = "3";
-    }
-    if (college.id === "380946") { // Kolej Kajetánka
-        if (college.rooms[0]) college.rooms[0].women = "2";
-    }
-}
+
+//for (const college of data) {
+//    if (college.id === "380942") { // Kolej Budeč
+//        if (college.rooms[0]) college.rooms[0].men = "3";
+//    }
+//    if (college.id === "380946") { // Kolej Kajetánka
+//        if (college.rooms[0]) college.rooms[0].women = "2";
+//    }
+//}
+
 // ============================================================
 // 🧪 END TEST OVERRIDE 🧪
 // ============================================================
