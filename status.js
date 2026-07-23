@@ -11,7 +11,17 @@ function roomTotal(room) {
     );
 }
 
-function buildEmbed(data, updatedAt) {
+function buildEmbed(data, updatedAt, sourcesDown) {
+    if (sourcesDown) {
+        return {
+            title: "Stav kolejí UK",
+            description: "⚠️ Weby kolejí jsou momentálně nedostupné. Zobrazená data jsou z poslední úspěšné kontroly.",
+            color: 0xe07a6e,
+            footer: { text: "Poslední pokus o kontrolu" },
+            timestamp: updatedAt
+        };
+    }
+
     let totalFree = 0;
 
     const fields = data.map((college) => {
@@ -99,7 +109,7 @@ async function editMessage(channelId, messageId, embed, botToken) {
  * subsequent run. The message ID is persisted in status-message-id.json,
  * which must be committed back to the repo alongside dorms.json.
  */
-export async function upsertStatusMessage(data, updatedAt) {
+export async function upsertStatusMessage(data, updatedAt, options = {}) {
     const botToken = process.env.DISCORD_BOT_TOKEN;
     const channelId = process.env.DISCORD_STATUS_CHANNEL_ID;
 
@@ -110,7 +120,7 @@ export async function upsertStatusMessage(data, updatedAt) {
         return;
     }
 
-    const embed = buildEmbed(data, updatedAt);
+    const embed = buildEmbed(data, updatedAt, options.sourcesDown);
 
     const existingId = loadMessageId();
 
