@@ -126,6 +126,21 @@ function buildPersonalMessage(subscribedIds, collegeStatus, mode) {
     return `**Koleje UK:** ${sentence}\nDetailní přehled: ${WEBSITE_LINK}`;
 }
 
+export async function notifySourcesDown() {
+    const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+
+    const content =
+        "⚠️ **Koleje UK:** Weby kolejí jsou momentálně nedostupné, kontrola se opakuje příští hodinu.";
+
+    console.log("Channel notification:", content);
+
+    if (webhookUrl) {
+        await postToDiscord(webhookUrl, content);
+    } else {
+        console.log("DISCORD_WEBHOOK_URL not set, skipping channel message.");
+    }
+}
+
 export async function notifyAvailability(data) {
     const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
     const botToken = process.env.DISCORD_BOT_TOKEN;
