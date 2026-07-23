@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-23T19:31:02.851Z",
+  "updatedAt": "2026-07-23T20:02:23.453Z",
   "sourcesDown": false,
   "data": [
     {
@@ -106,44 +106,8 @@
     },
     {
       "id": "380939",
-      "collegeName": "Kolej Jednota",
-      "rooms": [
-        {
-          "name": "1-lůžkový pokoj bez soc. zař.",
-          "price": "232",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        },
-        {
-          "name": "2-lůžkový pokoj bez soc. zař.",
-          "price": "193",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        },
-        {
-          "name": "3-lůžkový pokoj bez soc. zař.",
-          "price": "154",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        },
-        {
-          "name": "4-lůžkový pokoj bez soc. zař.",
-          "price": "144",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        },
-        {
-          "name": "5-lůžkový pokoj bez soc. zař.",
-          "price": "0",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        }
-      ]
+      "collegeName": "Proxy Error",
+      "rooms": []
     },
     {
       "id": "380946",
