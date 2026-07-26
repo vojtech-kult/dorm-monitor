@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-26T08:04:06.376Z",
+  "updatedAt": "2026-07-26T08:35:05.542Z",
   "sourcesDown": false,
   "data": [
     {
@@ -24,12 +24,12 @@
     },
     {
       "id": "380946",
-      "collegeName": "Service Unavailable",
+      "collegeName": "Proxy Error",
       "rooms": []
     },
     {
       "id": "380958",
-      "collegeName": "Service Unavailable",
+      "collegeName": "Proxy Error",
       "rooms": []
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "id": "380948",
-      "collegeName": "Proxy Error",
+      "collegeName": "Service Unavailable",
       "rooms": []
     }
   ]
