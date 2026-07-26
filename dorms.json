@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-26T04:09:04.890Z",
+  "updatedAt": "2026-07-26T04:35:06.276Z",
   "sourcesDown": false,
   "data": [
     {
@@ -9,7 +9,7 @@
     },
     {
       "id": "380952",
-      "collegeName": "Proxy Error",
+      "collegeName": "Service Unavailable",
       "rooms": []
     },
     {
@@ -19,7 +19,7 @@
     },
     {
       "id": "380939",
-      "collegeName": "Service Unavailable",
+      "collegeName": "Proxy Error",
       "rooms": []
     },
     {
@@ -34,12 +34,12 @@
     },
     {
       "id": "380961",
-      "collegeName": "Proxy Error",
+      "collegeName": "Service Unavailable",
       "rooms": []
     },
     {
       "id": "380945",
-      "collegeName": "Proxy Error",
+      "collegeName": "Service Unavailable",
       "rooms": []
     },
     {
