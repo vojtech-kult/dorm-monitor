@@ -83,7 +83,7 @@ function buildChannelContent(collegeStatus, dormRoles) {
     const available = collegeStatus.filter((c) => c.total > 0);
 
     if (available.length === 0) {
-        return `**Koleje UK:** Žádná nová místa se neuvolnila.\nDetailní přehled: ${WEBSITE_LINK}`;
+        return `**Koleje UK:** Žádná nová místa se neuvolnila.`;
     }
 
     const sentence = buildSummarySentence(available, { mentions: true, dormRoles });
