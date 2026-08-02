@@ -1,34 +1,7 @@
 {
-  "updatedAt": "2026-08-02T10:01:43.278Z",
+  "updatedAt": "2026-08-02T10:32:22.433Z",
   "sourcesDown": false,
   "data": [
-    {
-      "id": "380942",
-      "collegeName": "Kolej Budeč",
-      "rooms": [
-        {
-          "name": "1-lůžkový pokoj bez soc. zař.",
-          "price": "230",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        },
-        {
-          "name": "2-lůžkový pokoj bez soc. zař.",
-          "price": "176",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        },
-        {
-          "name": "3-lůžkový pokoj bez soc. zař.",
-          "price": "146",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        }
-      ]
-    },
     {
       "id": "380952",
       "collegeName": "Kolej Hostivař",
