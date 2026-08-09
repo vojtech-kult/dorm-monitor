@@ -1,7 +1,61 @@
 {
-  "updatedAt": "2026-08-09T21:30:48.531Z",
+  "updatedAt": "2026-08-09T22:01:07.210Z",
   "sourcesDown": false,
   "data": [
+    {
+      "id": "380942",
+      "collegeName": "Kolej Budeč",
+      "rooms": [
+        {
+          "name": "1-lůžkový pokoj bez soc. zař.",
+          "price": "230",
+          "men": "0",
+          "women": "0",
+          "unknown": "0"
+        },
+        {
+          "name": "2-lůžkový pokoj bez soc. zař.",
+          "price": "176",
+          "men": "0",
+          "women": "0",
+          "unknown": "0"
+        },
+        {
+          "name": "3-lůžkový pokoj bez soc. zař.",
+          "price": "146",
+          "men": "0",
+          "women": "0",
+          "unknown": "0"
+        }
+      ]
+    },
+    {
+      "id": "380952",
+      "collegeName": "Kolej Hostivař",
+      "rooms": [
+        {
+          "name": "1-lůžkový pokoj se soc. zař.",
+          "price": "196",
+          "men": "0",
+          "women": "0",
+          "unknown": "0"
+        },
+        {
+          "name": "2-lůžkový pokoj bez soc. zař.",
+          "price": "151",
+          "men": "0",
+          "women": "0",
+          "unknown": "0"
+        },
+        {
+          "name": "2-lůžkový pokoj se soc. zař.",
+          "price": "164",
+          "men": "0",
+          "women": "0",
+          "unknown": "0"
+        }
+      ]
+    },
     {
       "id": "380944",
       "collegeName": "Kolej Hvězda",
@@ -44,6 +98,47 @@
         {
           "name": "2-lůžkový pokoj bez soc. Zař. NWXL",
           "price": "168",
+          "men": "0",
+          "women": "0",
+          "unknown": "0"
+        }
+      ]
+    },
+    {
+      "id": "380939",
+      "collegeName": "Kolej Jednota",
+      "rooms": [
+        {
+          "name": "1-lůžkový pokoj bez soc. zař.",
+          "price": "232",
+          "men": "0",
+          "women": "0",
+          "unknown": "0"
+        },
+        {
+          "name": "2-lůžkový pokoj bez soc. zař.",
+          "price": "193",
+          "men": "0",
+          "women": "0",
+          "unknown": "0"
+        },
+        {
+          "name": "3-lůžkový pokoj bez soc. zař.",
+          "price": "154",
+          "men": "0",
+          "women": "0",
+          "unknown": "0"
+        },
+        {
+          "name": "4-lůžkový pokoj bez soc. zař.",
+          "price": "144",
+          "men": "0",
+          "women": "0",
+          "unknown": "0"
+        },
+        {
+          "name": "5-lůžkový pokoj bez soc. zař.",
+          "price": "0",
           "men": "0",
           "women": "0",
           "unknown": "0"
@@ -119,6 +214,26 @@
         {
           "name": "2-lůžkový pokoj se soc. Zař. NW",
           "price": "226",
+          "men": "0",
+          "women": "0",
+          "unknown": "0"
+        }
+      ]
+    },
+    {
+      "id": "380961",
+      "collegeName": "Kolej Krystal",
+      "rooms": [
+        {
+          "name": "1-lůžkový pokoj se soc. Zař.",
+          "price": "444",
+          "men": "0",
+          "women": "0",
+          "unknown": "0"
+        },
+        {
+          "name": "2-lůžkový pokoj se soc. zař.",
+          "price": "310",
           "men": "0",
           "women": "0",
           "unknown": "0"
@@ -255,6 +370,19 @@
         {
           "name": "1-lužkový pokoj se soc. Zar. NW",
           "price": "215",
+          "men": "0",
+          "women": "0",
+          "unknown": "0"
+        }
+      ]
+    },
+    {
+      "id": "380948",
+      "collegeName": "Kolej 17. listopadu",
+      "rooms": [
+        {
+          "name": "2-lůžkový pokoj se soc. zař.",
+          "price": "174",
           "men": "0",
           "women": "0",
           "unknown": "0"
