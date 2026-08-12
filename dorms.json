@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-12T22:30:48.092Z",
+  "updatedAt": "2026-08-12T23:02:24.834Z",
   "sourcesDown": false,
   "data": [
     {
@@ -98,47 +98,6 @@
         {
           "name": "2-lůžkový pokoj bez soc. Zař. NWXL",
           "price": "168",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        }
-      ]
-    },
-    {
-      "id": "380939",
-      "collegeName": "Kolej Jednota",
-      "rooms": [
-        {
-          "name": "1-lůžkový pokoj bez soc. zař.",
-          "price": "232",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        },
-        {
-          "name": "2-lůžkový pokoj bez soc. zař.",
-          "price": "193",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        },
-        {
-          "name": "3-lůžkový pokoj bez soc. zař.",
-          "price": "154",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        },
-        {
-          "name": "4-lůžkový pokoj bez soc. zař.",
-          "price": "144",
-          "men": "0",
-          "women": "0",
-          "unknown": "0"
-        },
-        {
-          "name": "5-lůžkový pokoj bez soc. zař.",
-          "price": "0",
           "men": "0",
           "women": "0",
           "unknown": "0"
@@ -297,7 +256,7 @@
           "price": "176",
           "men": "0",
           "women": "0",
-          "unknown": "8"
+          "unknown": "6"
         },
         {
           "name": "1-lůžkový pokoj se soc. Zař. NW",
