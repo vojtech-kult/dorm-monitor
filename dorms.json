@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-13T11:31:07.819Z",
+  "updatedAt": "2026-08-13T12:01:12.531Z",
   "sourcesDown": false,
   "data": [
     {
@@ -159,7 +159,7 @@
         {
           "name": "2-lůžkový pokoj se soc. zař.",
           "price": "183",
-          "men": "0",
+          "men": "5",
           "women": "0",
           "unknown": "0"
         },
@@ -168,7 +168,7 @@
           "price": "183",
           "men": "0",
           "women": "0",
-          "unknown": "0"
+          "unknown": "2"
         },
         {
           "name": "1-lůžkový pokoj se soc. Zař. NW",
@@ -297,7 +297,7 @@
           "price": "176",
           "men": "0",
           "women": "0",
-          "unknown": "4"
+          "unknown": "2"
         },
         {
           "name": "1-lůžkový pokoj se soc. Zař. NW",
